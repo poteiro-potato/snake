@@ -1,21 +1,7 @@
-"""Snake, classic arcade game.
-
-Exercises
-
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
-"""
-
-"""Making code better for flake 8 validation
-No unnecesary spaces
-Two Spaces Between Functions
-"""
+"""Making code better for flake 8 validation"""
 from random import randrange
-from turtle import *
-
-from freegames import square, vector
+from turtle import hideturtle, listen, onkey, ontimer, setup, tracer, update
+from freegames import square, vector, clear, done
 
 
 food = vector(0, 0)
@@ -60,8 +46,7 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
-    
-    # Snake now moves faster
+    """ Snake now moves faster """
     ontimer(move, 50)
 
 
@@ -75,4 +60,3 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
-
