@@ -8,10 +8,15 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+"""Making code better for flake 8 validation
+No unnecesary spaces
+Two Spaces Between Functions
+"""
 from random import randrange
 from turtle import *
 
 from freegames import square, vector
+
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -25,7 +30,7 @@ def change(x, y):
 
 
 def inside(head):
-    """Return True if head inside boundaries."""
+    """Return True if head is inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
@@ -55,7 +60,9 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
-    ontimer(move, 100)
+    
+    # Snake now moves faster
+    ontimer(move, 50)
 
 
 setup(420, 420, 370, 0)
@@ -68,3 +75,4 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
+
